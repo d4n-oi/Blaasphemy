@@ -100,11 +100,60 @@ body{
     object-fit: cover;
     border-radius: 14px;
     transition: transform .5s ease, box-shadow .5s ease;
+    display: inline-block;
 }
 
 .livro:hover{
     transform: scale(1.06);
     box-shadow: 0 0 30px rgba(169,18,18,.35);
+}
+
+#btncontrol{
+    position: relative;
+    display: inline-block;
+}
+#texto{
+    position: absolute;
+    inset: 0; /* top, right, bottom, left = 0 */
+
+    background: rgba(4,4,4,.95);
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.95);
+    transition: opacity .4s ease, transform .4s ease;
+    z-index: 5;
+}
+
+.texto-conteudo{
+    max-width: 80%;
+    max-height: 80%;
+
+    padding: 1.5rem;
+    overflow-y: auto;
+
+    line-height: 1.6;
+    font-size: clamp(.85rem, 2vw, 1rem);
+    font-family: "Georgia", serif;
+    text-shadow: 0 0 6px rgba(169,18,18,.15);
+}
+
+@media (max-width: 600px){
+    .texto-conteudo{
+        padding: 1rem;
+        font-size: .85rem;
+    }
+}
+
+#btncontrol:checked + label > div{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.07);
 }
 
 
@@ -123,6 +172,7 @@ body{
     object-fit: cover;
     border-radius: 14px;
     transition: transform .5s ease, box-shadow .5s ease;
+    cursor: pointer;
 }
 
 .design:hover{
@@ -156,6 +206,50 @@ body{
     grid-row: 3 / span 1;
 }
 
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-bg img{
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(169,18,18,.4);
+    animation: zoomIn .4s ease;
+}
+
+#d1:checked ~ .overlay,
+#d2:checked ~ .overlay,
+#d3:checked ~ .overlay,
+#d4:checked ~ .overlay{
+    display: flex;
+}
+
+#d1:checked ~ .overlay label:not([for="d1"]),
+#d2:checked ~ .overlay label:not([for="d2"]),
+#d3:checked ~ .overlay label:not([for="d3"]),
+#d4:checked ~ .overlay label:not([for="d4"]){
+    display: none;
+}
+
+@keyframes zoomIn{
+    from{
+        transform: scale(.9);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 /* BACKGROUND ART */
 .background-art{
@@ -247,5 +341,6 @@ body{
     opacity: .6;
     line-height: 1.4;
 }
+
 
 
