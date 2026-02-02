@@ -11,7 +11,7 @@
 body{
     background-color: var(--bkg);
     color: var(--text);
-    font-family: 'URW Chancery L', cursive;
+    font-family: 'Verdana', cursive;
     margin: 0;
     overflow-x: hidden;
 }
@@ -43,6 +43,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: .8rem;
+    padding-top: 5%;
 }
 #perfil{
     width: 150px;
@@ -178,6 +179,19 @@ body{
     gap: 1.2rem;
 }
 
+@media (max-width: 768px){
+    .designs-grid{
+        padding: 1rem 0rem;
+    }
+}
+
+@media (max-width: 480px){
+    .designs-grid{
+        padding: 1rem 0.8rem;
+    }
+}
+
+
 /* base */
 .design{
     width: 100%;
@@ -278,7 +292,7 @@ body{
 .bg-img{
     position: absolute;
     width: 220px;
-    opacity: 0.07;
+    opacity: 0.1;
     filter: blur(1px);
     mix-blend-mode: screen;
     animation: float 10s ease-in-out infinite;
@@ -286,15 +300,15 @@ body{
 
 /* espalhamento manual (ajuste como quiser) */
 .bg-img:nth-child(1){ top: 10%; left: 5%; animation-delay: 0s; }
-.bg-img:nth-child(2){ top: 25%; left: 70%; animation-delay: 2s; }
+.bg-img:nth-child(2){ top: 25%; left: 80%; animation-delay: 2s; }
 .bg-img:nth-child(3){ top: 40%; left: 30%; animation-delay: 4s; }
 
 .bg-img:nth-child(4){ top: 55%; left: 10%; animation-delay: 1s; }
-.bg-img:nth-child(5){ top: 70%; left: 60%; animation-delay: 3s; }
+.bg-img:nth-child(5){ top: 70%; left: 70%; animation-delay: 3s; }
 .bg-img:nth-child(6){ top: 85%; left: 35%; animation-delay: 5s; }
 
 .bg-img:nth-child(7){ top: -10%; left: 30%; animation-delay: 1s; }
-.bg-img:nth-child(8){ top: 10%; left: 60%; animation-delay: 3s; }
+.bg-img:nth-child(8){ top: -5%; left: 65%; animation-delay: 3s; }
 .bg-img:nth-child(9){ top: 30%; left: 50%; animation-delay: 5s; }
 
 @keyframes float{
