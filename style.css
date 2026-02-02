@@ -20,6 +20,7 @@ body{
 .container-portfolio{
     max-width: 900px;
     margin: auto;
+    padding: 4rem 2rem;
     text-align: center;
     position: relative;
     z-index: 2;
@@ -27,7 +28,8 @@ body{
 
 @media (max-width: 768px){
     .container-portfolio{
-        padding: 2rem 1rem;
+        max-width: 100%;
+        padding: 2rem 30px;
     }
 }
 
@@ -111,6 +113,10 @@ body{
     border-radius: 8px;
 }
 
+@media screen {
+    
+}
+
 .livro{
     object-fit: cover;
     border-radius: 14px;
@@ -146,7 +152,7 @@ body{
 }
 
 .texto-conteudo{
-    max-width: 60%;
+    max-width: 90%;
     max-height: 90%;
 
     padding: 1.5rem;
@@ -181,13 +187,16 @@ body{
 
 @media (max-width: 768px){
     .designs-grid{
-        padding: 1rem 0rem;
+        transform: scaleX(1.2) scaleY(1.2);
+        gap: 1rem;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
 @media (max-width: 480px){
     .designs-grid{
-        padding: 1rem 0.8rem;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 30px 30px;
     }
 }
 
